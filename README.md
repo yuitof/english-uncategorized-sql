@@ -20,3 +20,7 @@ Long in to the database we've created earlier and load the csv file.
 LOAD DATA INFILE './uncategorized.csv' INTO TABLE uncategorized FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
 ```
 
+```
+SELECT * FROM uncategorized INTO OUTFILE target_file FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+```
+
