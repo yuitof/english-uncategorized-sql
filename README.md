@@ -15,7 +15,7 @@ Dump the sql file.
 mysql -u root -p english_uncategorized < ./english_uncategorized_sql_scheme.sql
 ```
 
-Long in to the database we've created earlier and load the csv file..
+Long in to the database we've created earlier and load the csv file.
 ```
 LOAD DATA INFILE './uncategorized.csv' INTO TABLE uncategorized FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
 ```
