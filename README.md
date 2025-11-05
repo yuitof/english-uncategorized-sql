@@ -10,7 +10,9 @@ docker compose up -d
 
 When you access localhost:6033, you will see the login page of phpMyAdmin.
 
+|          |          |
+| -------- | -------- |
 | Password | password |
-| Username | root |
+| Username | root     |
 
 I stored data inside the 'usages' table of the 'db' database
