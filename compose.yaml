@@ -1,0 +1,24 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+      - ./secure_file_priv:/var/lib/mysql-files
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 6033:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password

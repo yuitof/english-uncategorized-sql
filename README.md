@@ -1,27 +1,16 @@
 # english-uncategorized-sql
-I've switched to managing usages with sql.
-If you want to import the data to your database, create a database and a table and then dump the sql file. Since it has only the scheme data of the table, you need to import the csv file to access the data using sql.
 
-Refer to the following commands if necessary.
+You can see the list of English usages that I came accross using docker containers.
 
-Create a database and a table
 ```
-CREATE DATABASE english_uncategorized;
-```
-Notes: Press control + D to exit the mysql console.
-
-Dump the sql file.
-```
-mysql -u root -p english_uncategorized < ./english_uncategorized_sql_scheme.sql
+git clone https://github.com/yuitof/english-uncategorized-sql.git
+cd english-uncategorized-sql.git
+docker compose up -d
 ```
 
-Long in to the database we've created earlier and load the csv file.
-```
-LOAD DATA INFILE './uncategorized.csv' INTO TABLE uncategorized FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
-```
+When you access localhost:6033, you will see the login page of phpMyAdmin.
 
-Export a csv file.
-```
-SELECT * FROM uncategorized INTO OUTFILE target_file FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
-```
+| Password | password |
+| Username | root |
 
+I stored data inside the 'usages' table of the 'db' database
